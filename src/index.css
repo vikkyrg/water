@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-[#172033] antialiased font-sans selection:bg-[#185BF1]/20 selection:text-[#0B4FA8];
+    background-color: #EBF4FF; /* Slightly deeper blue for base */
+    background-image: url('./assets/images/backgrounds/bg-water-texture.jpg');
+    background-size: 500px;
+    background-repeat: repeat;
+    background-blend-mode: color-burn; /* Stronger blend mode for more visible water texture */
+  }
+  
+  /* Background Tiers */
+  .bg-style-a {
+    @apply bg-white/60 relative backdrop-blur-md;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 20px 40px -20px rgba(24, 91, 241, 0.05);
+  }
+  .bg-style-b {
+    @apply bg-[#E6F0FA]/80 relative backdrop-blur-lg;
+    background-image: url('./assets/images/backgrounds/bg-water-texture.jpg'), linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+    background-size: 300px, 100%;
+    background-repeat: repeat, no-repeat;
+    background-blend-mode: multiply, normal;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+  }
+  .bg-style-c {
+    @apply bg-[#0A192F] text-white relative;
+  }
+  .bg-style-d {
+    @apply bg-gradient-to-r from-[#185BF1] to-[#0B4FA8] text-white relative;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-extrabold tracking-tight text-dark;
+  }
+  h1 {
+    @apply leading-tight;
+  }
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3.5 px-7 rounded-[12px] shadow-md hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 inline-flex items-center justify-center;
+  }
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-dark text-white font-semibold py-3.5 px-7 rounded-[12px] shadow-md hover:shadow-xl hover:shadow-secondary/20 hover:-translate-y-0.5 transition-all duration-300 inline-flex items-center justify-center;
+  }
+}
