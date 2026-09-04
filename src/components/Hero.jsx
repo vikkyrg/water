@@ -17,7 +17,14 @@ export default function Hero() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    if (name === 'phone') {
+      const numericValue = value.replace(/[^0-9]/g, '');
+      if (numericValue.length <= 10) {
+        setFormData(prev => ({ ...prev, [name]: numericValue }));
+      }
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -31,10 +38,10 @@ export default function Hero() {
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
 
     const templateParams = {
-      from_name: formData.name,
+      full_name: formData.name,
       phone_number: formData.phone,
       address: formData.address,
-      service_required: formData.service,
+      service: formData.service,
       message: formData.message,
     };
 
@@ -77,7 +84,7 @@ export default function Hero() {
               Cleaning Services
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-lg font-medium">
+            <p className="text-lg md:text-xl text-gray-900 leading-relaxed max-w-lg font-semibold">
               Ensure your family's health with our 6-step deep cleaning process. We use advanced UV sterilization and high-pressure cleaning to remove 99.9% of bacteria.
             </p>
             
@@ -107,6 +114,9 @@ export default function Hero() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
+                    maxLength="10"
+                    pattern="[0-9]{10}"
+                    title="Please enter a valid 10-digit phone number"
                     placeholder="Phone Number" 
                     className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-gray-700 font-medium"
                   />
@@ -122,23 +132,16 @@ export default function Hero() {
                     className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-gray-700 font-medium"
                   />
                 </div>
-                <div className="relative">
-                  <select 
-                    name="service" 
+                <div>
+                  <input 
+                    type="text" 
+                    name="service"
                     value={formData.service}
                     onChange={handleChange}
                     required
-                    className={`w-full px-5 py-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none font-medium appearance-none ${formData.service === '' ? 'text-gray-400' : 'text-gray-700'}`}
-                  >
-                    <option value="" disabled hidden>Service Required</option>
-                    <option value="Sump Cleaning" className="text-gray-700">Sump Cleaning</option>
-                    <option value="Water Tank Cleaning" className="text-gray-700">Water Tank Cleaning</option>
-                    <option value="Residential Cleaning" className="text-gray-700">Residential Cleaning</option>
-                    <option value="Commercial Cleaning" className="text-gray-700">Commercial Cleaning</option>
-                    <option value="Industrial Cleaning" className="text-gray-700">Industrial Cleaning</option>
-                    <option value="Other" className="text-gray-700">Other</option>
-                  </select>
-                  <FaChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+                    placeholder="Service Required" 
+                    className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-gray-700 font-medium"
+                  />
                 </div>
                 <div>
                   <textarea 

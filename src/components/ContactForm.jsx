@@ -15,7 +15,14 @@ export default function ContactForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    if (name === 'phone') {
+      const numericValue = value.replace(/[^0-9]/g, '');
+      if (numericValue.length <= 10) {
+        setFormData(prev => ({ ...prev, [name]: numericValue }));
+      }
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -28,10 +35,10 @@ export default function ContactForm() {
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
 
     const templateParams = {
-      from_name: formData.name,
+      full_name: formData.name,
       phone_number: formData.phone,
       address: formData.address,
-      service_required: formData.service,
+      service: formData.service,
       message: formData.message,
     };
 
@@ -78,6 +85,9 @@ export default function ContactForm() {
             id="phone" 
             name="phone" 
             required
+            maxLength="10"
+            pattern="[0-9]{10}"
+            title="Please enter a valid 10-digit phone number"
             value={formData.phone}
             onChange={handleChange}
             className="w-full px-4 py-3.5 rounded-xl border border-[#DCE3EA] focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all duration-300 text-gray-800"
@@ -101,22 +111,16 @@ export default function ContactForm() {
         
         <div>
           <label htmlFor="service" className="block text-sm font-bold text-gray-700 mb-2">Service Required</label>
-          <select 
+          <input 
+            type="text" 
             id="service" 
             name="service" 
+            required
             value={formData.service}
             onChange={handleChange}
-            required
-            className={`w-full px-4 py-3.5 rounded-xl border border-[#DCE3EA] focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all duration-300 bg-white ${formData.service === '' ? 'text-gray-400' : 'text-gray-800'}`}
-          >
-            <option value="" disabled hidden>Service Required</option>
-            <option value="Sump Cleaning" className="text-gray-800">Sump Cleaning</option>
-            <option value="Water Tank Cleaning" className="text-gray-800">Water Tank Cleaning</option>
-            <option value="Residential Cleaning" className="text-gray-800">Residential Cleaning</option>
-            <option value="Commercial Cleaning" className="text-gray-800">Commercial Cleaning</option>
-            <option value="Industrial Cleaning" className="text-gray-800">Industrial Cleaning</option>
-            <option value="Other" className="text-gray-800">Other</option>
-          </select>
+            className="w-full px-4 py-3.5 rounded-xl border border-[#DCE3EA] focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all duration-300 text-gray-800"
+            placeholder="Service Required"
+          />
         </div>
         
         <div>

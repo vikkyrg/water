@@ -19,8 +19,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 mb-12">
           
           {/* Column 1 – Company */}
-          <div className="flex flex-col lg:col-span-4 xl:col-span-4 lg:pr-4">
-            <div className="flex items-center mb-6">
+          <div className="flex flex-col lg:col-span-4 xl:col-span-4">
+            <div className="flex items-center mb-6 lg:mb-1 lg:-mt-4 lg:-ml-2">
               <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-3 group">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center border border-gray-100 shadow-sm flex-shrink-0 group-hover:shadow-md transition-shadow">
                   <img src={logo} alt="High Pressure Sump & Tank Logo" className="w-14 h-14 object-contain" />
@@ -37,8 +37,8 @@ export default function Footer() {
           </div>
 
           {/* Column 2 – Quick Links */}
-          <div className="flex flex-col lg:col-span-2 lg:pl-4">
-            <h4 className="text-xl font-bold text-dark tracking-tight mb-6">Quick Links</h4>
+          <div className="flex flex-col lg:col-span-2">
+            <h4 className="text-xl font-bold text-dark tracking-tight mb-6 lg:mb-10">Quick Links</h4>
             <ul className="flex flex-col gap-4 text-[15px] font-medium">
               <li><Link to="/" onClick={() => window.scrollTo(0, 0)} className="text-gray-600 hover:text-primary transition-colors inline-block hover:translate-x-1 transform duration-300">Home</Link></li>
               <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="text-gray-600 hover:text-primary transition-colors inline-block hover:translate-x-1 transform duration-300">About Us</Link></li>
@@ -49,7 +49,7 @@ export default function Footer() {
 
           {/* Column 3 – Our Services */}
           <div className="flex flex-col lg:col-span-2">
-            <h4 className="text-xl font-bold text-dark tracking-tight mb-6">Our Services</h4>
+            <h4 className="text-xl font-bold text-dark tracking-tight mb-6 lg:mb-10">Our Services</h4>
             <ul className="flex flex-col gap-4 text-[15px] font-medium text-gray-600">
               <li><Link to="/services" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors inline-block hover:translate-x-1 transform duration-300">Sump Cleaning</Link></li>
               <li><Link to="/services" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors inline-block hover:translate-x-1 transform duration-300">Water Tank Cleaning</Link></li>
@@ -61,7 +61,7 @@ export default function Footer() {
 
           {/* Column 4 – Contact Information */}
           <div className="flex flex-col lg:col-span-4">
-            <h4 className="text-xl font-bold text-dark tracking-tight mb-6">Contact Info</h4>
+            <h4 className="text-xl font-bold text-dark tracking-tight mb-6 lg:mb-10">Contact Info</h4>
             <ul className="flex flex-col gap-5 text-[15px] font-medium text-gray-600">
               <li className="flex items-start gap-3 group">
                 <FaMapMarkerAlt className="text-primary mt-1 flex-shrink-0 text-base group-hover:scale-110 transition-transform" />
