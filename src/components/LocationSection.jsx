@@ -40,8 +40,10 @@ export default function LocationSection() {
             Proprietor: Suresh
           </span>
 
-          <a href="mailto:highpressuresumptankcleaningse@gmail.com" className="text-gray-600 hover:text-primary font-medium block mb-4 transition-colors text-sm sm:text-base tracking-tight whitespace-nowrap">
-            highpressuresumptankcleaningse@gmail.com
+          <a href="mailto:
+highpressuresumptankcleaning@gmail.com" className="text-gray-600 hover:text-primary font-medium block mb-4 transition-colors text-sm sm:text-base tracking-tight whitespace-nowrap">
+
+            highpressuresumptankcleaning@gmail.com
           </a>
 
           <div className="pl-4 border-l-4 border-primary/20 bg-primary/5 p-4 rounded-r-lg">

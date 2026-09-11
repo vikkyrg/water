@@ -8,16 +8,16 @@ export default function Footer() {
 
   return (
     <footer className="bg-white text-gray-600 pt-16 pb-8 border-t border-gray-100 shadow-[0_-4px_20px_rgba(0,0,0,0.02)] relative overflow-hidden">
-      
+
       {/* Subtle brand color accents matching website */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[80px] pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
-      
+
       {/* Container matching rest of site */}
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl relative z-10">
-        
+
         {/* 12-Column Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 mb-12">
-          
+
           {/* Column 1 – Company */}
           <div className="flex flex-col lg:col-span-4 xl:col-span-4">
             <div className="flex items-center mb-6 lg:mb-1 lg:-mt-4 lg:-ml-2">
@@ -73,11 +73,13 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 group">
                 <FaEnvelope className="text-primary flex-shrink-0 text-base group-hover:scale-110 transition-transform" />
-                <a href="mailto:highpressuresumptankcleaningse@gmail.com" className="hover:text-primary font-bold text-dark transition-colors tracking-tight text-[13px] sm:text-[14px] break-all sm:break-normal">highpressuresumptankcleaningse@gmail.com</a>
+                <a href="mailto:
+highpressuresumptankcleaning@gmail.com" className="hover:text-primary font-bold text-dark transition-colors tracking-tight text-[13px] sm:text-[14px] break-all sm:break-normal">
+                  highpressuresumptankcleaning@gmail.com</a>
               </li>
             </ul>
           </div>
-          
+
         </div>
 
         {/* Bottom Footer */}
@@ -87,7 +89,7 @@ export default function Footer() {
             Developed by <a href="https://www.innomatricstech.com/" target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:text-primary-dark transition-colors">Innomatrics Technologies</a>
           </p>
         </div>
-        
+
       </div>
     </footer>
   );
