@@ -65,7 +65,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-5 text-[15px] font-medium text-gray-600">
               <li className="flex items-start gap-3 group">
                 <FaMapMarkerAlt className="text-primary mt-1 flex-shrink-0 text-base group-hover:scale-110 transition-transform" />
-                <span className="leading-relaxed">Varthur Madhura Nagar 2nd Stage,<br />1st Main, Madhuranagara,<br />Bengaluru, Karnataka 560087</span>
+                <span className="leading-relaxed">85/65, first floor Varthur, First Stage,<br />Madhura Nagar, Bengaluru, Karnataka 560087</span>
               </li>
               <li className="flex items-center gap-3 group">
                 <FaPhoneAlt className="text-primary flex-shrink-0 text-base group-hover:scale-110 transition-transform" />

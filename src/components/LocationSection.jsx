@@ -47,11 +47,9 @@ highpressuresumptankcleaning@gmail.com" className="text-gray-600 hover:text-prim
           </a>
 
           <div className="pl-4 border-l-4 border-primary/20 bg-primary/5 p-4 rounded-r-lg">
-            Varthur Madhura Nagar 2nd Stage,
+            85/65, first floor Varthur, First Stage,
             <br />
-            1st Main, Madhuranagara,
-            <br />
-            Bengaluru, Karnataka 560087
+            Madhura Nagar, Bengaluru, Karnataka 560087
           </div>
 
         </address>
