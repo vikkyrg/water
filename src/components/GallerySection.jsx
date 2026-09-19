@@ -3,6 +3,11 @@ import img1 from '../assets/images/gallery/sump-cleaning.jpg';
 import img2 from '../assets/images/gallery/water-tank-cleaning.jpg';
 import img3 from '../assets/images/gallery/clean-water-storage.jpg';
 import img4 from '../assets/images/gallery/high-pressure-cleaning.jpg';
+import img5 from '../assets/images/gallery/1.jpeg';
+import img6 from '../assets/images/gallery/2.jpeg';
+import img7 from '../assets/images/gallery/3.jpeg';
+import img8 from '../assets/images/gallery/4.jpeg';
+import img9 from '../assets/images/gallery/5.jpeg';
 
 export default function GallerySection() {
   const galleryItems = [
@@ -37,6 +42,46 @@ export default function GallerySection() {
       category: "Quality Assurance",
       colSpan: "md:col-span-2",
       rowSpan: "md:row-span-1"
+    },
+    {
+      id: 5,
+      image: img5,
+      title: "Professional Equipment",
+      category: "Tools",
+      colSpan: "md:col-span-1",
+      rowSpan: "md:row-span-2"
+    },
+    {
+      id: 6,
+      image: img6,
+      title: "Deep Scrubbing",
+      category: "Process",
+      colSpan: "md:col-span-2",
+      rowSpan: "md:row-span-1"
+    },
+    {
+      id: 7,
+      image: img7,
+      title: "Hygienic Standards",
+      category: "Quality",
+      colSpan: "md:col-span-1",
+      rowSpan: "md:row-span-1"
+    },
+    {
+      id: 8,
+      image: img8,
+      title: "Expert Team",
+      category: "Service",
+      colSpan: "md:col-span-1",
+      rowSpan: "md:row-span-1"
+    },
+    {
+      id: 9,
+      image: img9,
+      title: "Spotless Finish",
+      category: "Results",
+      colSpan: "md:col-span-2",
+      rowSpan: "md:row-span-2"
     }
   ];
 
